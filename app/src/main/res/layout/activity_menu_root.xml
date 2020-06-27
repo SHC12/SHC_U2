@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".root.MenuRoot">
+
+            <include
+                android:id="@+id/include4"
+                layout="@layout/toolbar" />
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Menu Root"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/include4" />
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/textView13">
+
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:gravity="left">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".05"
+                        android:background="@drawable/table_header_cell_bg"
+                        android:text="No"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/Item"
+                        android:layout_width="300dp"
+                        android:text="Item"
+                        android:textAlignment="center"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/table_header_cell_bg"
+                        android:textColor="@android:color/white" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="left">
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".05"
+                        android:background="@drawable/table_content_cell_bg"
+                        android:text="1"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/info_aplikasi_menu"
+                        android:layout_width="220dp"
+                        android:text="Info Aplikasi"
+                        android:onClick="toEditInfo"
+                        android:textAlignment="center"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/table_content_cell_bg"
+                        android:textColor="@color/colorPrimary" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="left">
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".05"
+                        android:textAlignment="center"
+                        android:background="@drawable/table_content_cell_bg"
+                        android:text="2"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/notifikasi_pengajuan_menu"
+                        android:layout_width="220dp"
+                        android:text="Notifikasi Pengajuan"
+                        android:textAlignment="center"
+                        android:onClick="toEditNotifPengajuan"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/table_content_cell_bg"
+                        android:textColor="@color/colorPrimary" />
+                </TableRow>
+
+
+
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Klik pada kontent untuk mengedit data"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+            <LinearLayout
+                android:id="@+id/logout_root"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:onClick="toLogoutRoot"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/logout" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="Logout"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>

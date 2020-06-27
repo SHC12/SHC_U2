@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".root.EditInfoAplikasi">
+
+    <include
+        android:id="@+id/include8"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/edit_info_aplikasi"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include8" />
+
+    <EditText
+        android:id="@+id/ed_info_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="15dp"
+        android:hint="Masukan Info Aplikasi"
+        android:background="@drawable/edittextbg"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/info_nama_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="Masukan Nama Pemilik"
+        android:background="@drawable/edittextbg"
+        android:padding="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/ed_info_app" />
+
+    <EditText
+        android:id="@+id/info_no_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/edittextbg"
+        android:hint="Masukan Nomor/Nik Pemilik"
+        android:padding="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/info_nama_root" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSimpanInfo"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="20dp"
+        android:text="Simpan"
+        android:textStyle="bold"
+        app:cornerRadius="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_no_root" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DataCalonDebitur">
+
+    <include
+        android:id="@+id/include_toolbar_data_debitur"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:id="@+id/title_data_debitur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include_toolbar_data_debitur" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_data_calon_debitur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_data_debitur"
+        tools:listitem="@layout/data_calon_debitur_items" />
+
+    <TextView
+        android:id="@+id/sub_title_data_calon_debitur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/datacalondebiturclick"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_data_calon_debitur" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnExportCalonDebitur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:onClick="toExportCalonDebitur"
+        android:text="Export To PDF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sub_title_data_calon_debitur" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

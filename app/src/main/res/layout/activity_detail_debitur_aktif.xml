@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".kabag.DetailDebiturAktif">
+
+        <include
+            android:id="@+id/include4"
+            layout="@layout/toolbar" />
+        <TextView
+            android:id="@+id/title_detail_debitur_kabag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include4" />
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/title_detail_debitur_kabag">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_header_cell_bg"
+                android:gravity="left">
+
+                <TextView
+                    android:id="@+id/tx_kode_debitur_aktif"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table_header_cell_bg"
+                    android:text="Kode Debitur"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:gravity="left">
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".05"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:text="Tanggal Pengajuan"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/tanggalPengajuanDebiturAktif"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:textColor="@color/colorPrimary" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="left">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".05"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:text="Nama"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/namaDetailDebiturAktif"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:textColor="@color/colorPrimary" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="left">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".05"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:text="Nomor Handphone"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/nomorHandphoneDebiturAktif"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:textColor="@color/colorPrimary" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="left">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".05"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:text="Nominal"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/nominal_debitur_aktif"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:textColor="@color/colorPrimary" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="left">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".05"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:text="Status"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/status_debitur_aktif"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:textColor="@color/colorPrimary" />
+            </TableRow>
+
+
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

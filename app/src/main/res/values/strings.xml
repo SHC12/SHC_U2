@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">UKD</string>
+    <string name="ajukan">Ajukan Peminjaman</string>
+    <string name="login">Login</string>
+    <string name="title_long">UJI KELAYAKAN DEBITUR</string>
+    <string name="datacalondebiturclick">
+        Klik pada nama untuk melihat detail calon debitur, data disusun berdasarkan tanggal pengajuan terbaru
+    </string>
+    <string name="edit_info_aplikasi">Edit Info Aplikasi</string>
+
+    <string-array name="spinner_kabag">
+        <item>Proses</item>
+        <item>Disetujui</item>
+        <item>Ditolak</item>
+    </string-array>
+</resources>

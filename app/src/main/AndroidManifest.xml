@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mobile.ukd">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ukdicon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ukdicon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".GaleryViewer"></activity>
+        <activity android:name=".PDFViewer" />
+        <activity android:name=".root.EditNotifikasiPengajuan" />
+        <activity android:name=".root.EditInfoAplikasi" />
+        <activity android:name=".root.MenuRoot" />
+        <activity android:name=".kabag.DashboardKabag" />
+        <activity android:name=".kabag.DetailCalonDebiturKabag" />
+        <activity android:name=".kabag.DetailDebiturAktif" />
+        <activity android:name=".admin.InsertPembayaran" />
+        <activity android:name=".admin.DashboardAdmin" />
+        <activity android:name=".admin.DetailDataPembayaranDebitur" />
+        <activity android:name=".admin.DataPembayaranDebitur" />
+        <activity android:name=".admin.DetailCalonDebitur" />
+        <activity android:name=".DataCalonDebitur" />
+        <activity android:name=".AccountActivity" />
+        <activity android:name=".debitur.RiwayatPengajuanDebitur" />
+        <activity android:name=".debitur.DataPinjamanDebitur" />
+        <activity android:name=".debitur.DashboardDebitur" />
+        <activity android:name=".NotifikasiActivity" />
+        <activity android:name=".InfoActivity" />
+        <activity android:name=".AjukanPeminjamanActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".MenuLoginActivity" />
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".admin.DetailDataPembayaranDebitur">
+
+        <include
+            android:id="@+id/include4"
+            layout="@layout/toolbar" />
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Detail Data Pembayaran Debitur"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include4" />
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/textView13">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_header_cell_bg"
+                android:gravity="left">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table_header_cell_bg"
+                    android:text="Kode Debitur"
+                    android:id="@+id/tx_kode_debitur_detail_pembayaran"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="left">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".05"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:text="Nama"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/namaDetailPembayaranDebitur"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:textColor="@color/colorPrimary" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="left">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".05"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:text="Pinjaman"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/pinjamanPembayaranDebitur"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:textColor="@color/colorPrimary" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="left">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".05"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:text="Total Bayar"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/totalBayarPeminjamanDebitur"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:textColor="@color/colorPrimary" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="left">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".05"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:text="Sisa Hutang"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/sisaHutangPembayaranDebitur"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table_content_cell_bg"
+                    android:textColor="@color/colorPrimary" />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Rincian Pembayaran"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:id="@+id/rv_rincian_pembayaran"
+            tools:listitem="@layout/riwayat_peminjaman_items"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnExportDebitur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:onClick="toExportDetailRincianPembayaranDebitur"
+            android:text="Export To PDF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_rincian_pembayaran" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
