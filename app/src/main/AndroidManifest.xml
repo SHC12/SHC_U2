@@ -4,18 +4,19 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ukdicon"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/ukdicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".GaleryViewer"></activity>
+        <activity android:name=".admin.UpdateDebitur"></activity>
+        <activity android:name=".GaleryViewer" />
         <activity android:name=".PDFViewer" />
         <activity android:name=".root.EditNotifikasiPengajuan" />
         <activity android:name=".root.EditInfoAplikasi" />

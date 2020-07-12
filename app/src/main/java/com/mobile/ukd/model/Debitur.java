@@ -53,7 +53,20 @@ public class Debitur implements Parcelable {
     private String password;
     @SerializedName("status")
     private String status;
-    public Debitur(String no, String kodeDebitur, String idDebitur, String id_user, String tanggalPengajuan, String namaDebitur, String nik, String fileKtp, String noNpwp, String fileNpwp, String noHp, String alamat, String email, String nominal, String tenorBulan, String username, String password, String status) {
+    @SerializedName("tanggungan")
+    private String jumlah_tanggunan;
+    @SerializedName("pendapatan_kotor")
+    private String pendapatanKotorPerhari;
+    @SerializedName("pengeluaran_keluarga")
+    private String pengeluaranKeluargaPerhari;
+    @SerializedName("pendapatan_bersih_perhari")
+    private String pendapatanBersihPerhari;
+    @SerializedName("hari_kerja_usaha")
+    private String jumlahHariUsahaSebulan;
+    @SerializedName("pendapatan_bersih_perbulan")
+    private String jumlahPendapatanBersihPerbulan;
+
+    public Debitur(String no, String kodeDebitur, String idDebitur, String id_user, String tanggalPengajuan, String namaDebitur, String nik, String fileKtp, String noNpwp, String fileNpwp, String noHp, String alamat, String email, String tanggungan, String kotor, String keluarga, String bersihHari, String usaha, String bersihBulan, String nominal, String tenorBulan, String username, String password, String status) {
         this.no = no;
         this.kodeDebitur = kodeDebitur;
         this.idDebitur = idDebitur;
@@ -67,6 +80,12 @@ public class Debitur implements Parcelable {
         this.noHp = noHp;
         this.alamat = alamat;
         this.email = email;
+        this.jumlah_tanggunan = tanggungan;
+        this.pendapatanKotorPerhari = kotor;
+        this.pengeluaranKeluargaPerhari = keluarga;
+        this.pendapatanBersihPerhari = bersihHari;
+        this.jumlahHariUsahaSebulan = usaha;
+        this.jumlahPendapatanBersihPerbulan = bersihBulan;
         this.nominal = nominal;
         this.tenorBulan = tenorBulan;
         this.username = username;
@@ -91,11 +110,65 @@ public class Debitur implements Parcelable {
         noHp = in.readString();
         alamat = in.readString();
         email = in.readString();
+        jumlah_tanggunan = in.readString();
+        pendapatanKotorPerhari = in.readString();
+        pengeluaranKeluargaPerhari = in.readString();
+        pendapatanBersihPerhari = in.readString();
+        jumlahHariUsahaSebulan = in.readString();
+        jumlahPendapatanBersihPerbulan = in.readString();
         nominal = in.readString();
         tenorBulan = in.readString();
         username = in.readString();
         password = in.readString();
         status = in.readString();
+    }
+
+    public String getJumlah_tanggunan() {
+        return jumlah_tanggunan;
+    }
+
+    public void setJumlah_tanggunan(String jumlah_tanggunan) {
+        this.jumlah_tanggunan = jumlah_tanggunan;
+    }
+
+    public String getPendapatanKotorPerhari() {
+        return pendapatanKotorPerhari;
+    }
+
+    public void setPendapatanKotorPerhari(String pendapatanKotorPerhari) {
+        this.pendapatanKotorPerhari = pendapatanKotorPerhari;
+    }
+
+    public String getPengeluaranKeluargaPerhari() {
+        return pengeluaranKeluargaPerhari;
+    }
+
+    public void setPengeluaranKeluargaPerhari(String pengeluaranKeluargaPerhari) {
+        this.pengeluaranKeluargaPerhari = pengeluaranKeluargaPerhari;
+    }
+
+    public String getPendapatanBersihPerhari() {
+        return pendapatanBersihPerhari;
+    }
+
+    public void setPendapatanBersihPerhari(String pendapatanBersihPerhari) {
+        this.pendapatanBersihPerhari = pendapatanBersihPerhari;
+    }
+
+    public String getJumlahHariUsahaSebulan() {
+        return jumlahHariUsahaSebulan;
+    }
+
+    public void setJumlahHariUsahaSebulan(String jumlahHariUsahaSebulan) {
+        this.jumlahHariUsahaSebulan = jumlahHariUsahaSebulan;
+    }
+
+    public String getJumlahPendapatanBersihPerbulan() {
+        return jumlahPendapatanBersihPerbulan;
+    }
+
+    public void setJumlahPendapatanBersihPerbulan(String jumlahPendapatanBersihPerbulan) {
+        this.jumlahPendapatanBersihPerbulan = jumlahPendapatanBersihPerbulan;
     }
 
     public String getId_user() {
@@ -262,6 +335,12 @@ public class Debitur implements Parcelable {
         dest.writeString(noHp);
         dest.writeString(alamat);
         dest.writeString(email);
+        dest.writeString(jumlah_tanggunan);
+        dest.writeString(pendapatanKotorPerhari);
+        dest.writeString(pengeluaranKeluargaPerhari);
+        dest.writeString(pendapatanBersihPerhari);
+        dest.writeString(jumlahHariUsahaSebulan);
+        dest.writeString(jumlahPendapatanBersihPerbulan);
         dest.writeString(nominal);
         dest.writeString(tenorBulan);
         dest.writeString(username);

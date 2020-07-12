@@ -23,7 +23,7 @@ public class DetailDebiturAktif extends AppCompatActivity {
         title = findViewById(R.id.title_detail_debitur_kabag);
         String flag = getIntent().getStringExtra("flag");
         if(flag.equals("aktif")){
-            title.setText("Detail Debitur Aktif");
+            title.setText("Detail Debitur Layak");
             Debitur debitur = getIntent().getParcelableExtra(DETAIL_DEBITUR_AKITF);
             s_kode = debitur.getKodeDebitur();
             s_nama = debitur.getNamaDebitur();
@@ -32,7 +32,7 @@ public class DetailDebiturAktif extends AppCompatActivity {
             s_nominal = debitur.getNominal();
             s_status = debitur.getStatus();
         } else if(flag.equals("ditolak")){
-            title.setText("Detail Debitur Ditolak");
+            title.setText("Detail Debitur Tidak Layak");
             Debitur debitur = getIntent().getParcelableExtra(DETAIL_DEBITUR_DITOLAK);
             s_kode = debitur.getKodeDebitur();
             s_nama = debitur.getNamaDebitur();

@@ -9,7 +9,7 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".admin.DetailCalonDebitur">
 
     <include
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="Detail Calon Debitur"
+        android:text="Detail Data Pengajuan"
         android:textColor="@android:color/black"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -263,6 +263,145 @@
                 android:background="@drawable/table_content_cell_bg"
                 android:textColor="@android:color/black" />
         </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="left">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".05"
+                android:background="@drawable/table_content_cell_bg"
+                android:text="Jumlah Tanggungan"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/tanggunanDetailCalonDebitur"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_content_cell_bg"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="left">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".05"
+                android:background="@drawable/table_content_cell_bg"
+                android:text="Pendapatan Kotor Perhari"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/pendapatanKotorDetailCalonDebitur"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_content_cell_bg"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="left">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".05"
+                android:background="@drawable/table_content_cell_bg"
+                android:text="Pengeluaran Keluarga Perhari"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/pengeluaranKeluargaDetailCalonDebitur"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_content_cell_bg"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="left">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".05"
+                android:background="@drawable/table_content_cell_bg"
+                android:text="Pendapatan Bersih Perhari"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/pendapatanBersihPerhariDetailCalonDebitur"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_content_cell_bg"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="left">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".05"
+                android:background="@drawable/table_content_cell_bg"
+                android:text="Jumlah hari usaha dalam 1 bulan"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/jumlahHariUsahaDetailCalonDebitur"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_content_cell_bg"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="left">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".05"
+                android:background="@drawable/table_content_cell_bg"
+                android:text="Pendapatan Bersih Perbulan"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/pendapatanBersihPerbulanDetailCalonDebitur"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_content_cell_bg"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -376,11 +515,32 @@
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/table_content_cell_bg"
-                android:textColor="@android:color/black"/>
+                android:textColor="@android:color/black" />
         </TableRow>
 
 
     </TableLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUpdateDetailDebitur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="Update"
+        app:layout_constraintBottom_toBottomOf="@id/tableLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnHapusDebitur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:text="Hapus"
+        app:layout_constraintBottom_toBottomOf="@id/tableLayout"
+        app:layout_constraintStart_toEndOf="@id/btnUpdateDetailDebitur"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

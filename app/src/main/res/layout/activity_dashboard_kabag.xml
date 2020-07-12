@@ -6,11 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".kabag.DashboardKabag">
 
+
     <include
         layout="@layout/toolbar"
         android:id="@+id/includeKabag"
         />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="match_parent"
@@ -51,33 +51,6 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
-    <LinearLayout
-        android:id="@+id/persetujuan_debitur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:onClick="toPersetujuanDebitur"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@+id/data_pembayaran_admin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2">
-
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:src="@drawable/debitur_need_approval" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:maxEms="5"
-            android:text="Persetujuan Debitur"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textStyle="bold" />
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/data_debitur_aktif"
@@ -86,7 +59,6 @@
         android:layout_margin="40dp"
         android:onClick="toDataDebiturAktif"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
@@ -102,8 +74,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:maxEms="6"
+            android:text="Data Debitur Layak"
             android:textAlignment="center"
-            android:text="Data Debitur Aktif"
             android:textColor="@android:color/black"
             android:textStyle="bold" />
     </LinearLayout>
@@ -116,7 +88,7 @@
         android:onClick="toDataDebiturDitolak"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/data_pembayaran_admin"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
         <ImageView
@@ -132,8 +104,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:maxEms="5"
+            android:text="Data Debitur Tidak Layak"
             android:textAlignment="center"
-            android:text="Data Debitur Ditolak"
             android:textColor="@android:color/black"
             android:textStyle="bold" />
     </LinearLayout>
@@ -142,12 +114,12 @@
         android:id="@+id/account_kabag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="40dp"
         android:onClick="toAccountKabag"
         android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@+id/data_debitur_aktif"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/persetujuan_debitur">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/data_debitur_ditolak"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
         <ImageView
             android:layout_width="60dp"
@@ -172,8 +144,8 @@
         android:layout_margin="20dp"
         android:onClick="toLogoutKabag"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/data_debitur_aktif"
+        app:layout_constraintStart_toStartOf="@+id/data_debitur_aktif"
         app:layout_constraintTop_toBottomOf="@+id/data_debitur_aktif">
 
         <ImageView
@@ -191,7 +163,6 @@
             android:textColor="@android:color/black"
             android:textStyle="bold" />
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

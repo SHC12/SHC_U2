@@ -1,18 +1,15 @@
 package com.mobile.ukd;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.RequestQueue;
@@ -32,11 +29,6 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import okhttp3.Request;
-
-import static android.provider.ContactsContract.CommonDataKinds.Website.URL;
-import static okhttp3.Request.*;
 
 public class LoginActivity extends AppCompatActivity {
     private String URL_LOGIN = "http://kristoforus.my.id/api_android/model_login.php";
@@ -117,26 +109,19 @@ public class LoginActivity extends AppCompatActivity {
                             editor.commit();
 
 
-                            if (level.equals("1") && status.equals("2")) {
+                            if (level.equals("1") && status.equals("1")) {
                                 Intent intent = new Intent(getApplicationContext(), DashboardDebitur.class);
                                 intent.putExtra("username", username);
                                 intent.putExtra("id_user", id_user);
-
-
                                 startActivity(intent);
                             } else if (level.equals("1") && status.equals("0")) {
                                 Toast.makeText(LoginActivity.this, "Akun anda belum aktif", Toast.LENGTH_SHORT).show();
-                            } else if (level.equals("1") && status.equals("1")) {
-                                Toast.makeText(LoginActivity.this, "Akun dan pengajuan anda sedang di tinjau", Toast.LENGTH_SHORT).show();
-                            } else if (level.equals("1") && status.equals("3")) {
-                                Toast.makeText(LoginActivity.this, "Akun dan pengajuan ditolak", Toast.LENGTH_SHORT).show();
                             } else if (level.equals("2")) {
                                 Intent intent = new Intent(getApplicationContext(), DashboardAdmin.class);
                                 intent.putExtra("username", username);
                                 intent.putExtra("id_user", id_user);
                                 startActivity(intent);
-                            }
-                            else if (level.equals("3")) {
+                            } else if (level.equals("3")) {
                                 Intent intent = new Intent(getApplicationContext(), DashboardKabag.class);
                                 intent.putExtra("username", username);
                                 intent.putExtra("id_user", id_user);

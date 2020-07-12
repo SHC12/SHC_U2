@@ -33,12 +33,6 @@ public class DashboardKabag extends AppCompatActivity {
     }
     
 
-    public void toPersetujuanDebitur(View view) {
-        Intent i = new Intent(DashboardKabag.this,DataCalonDebitur.class);
-        i.putExtra("flag","kabag");
-        startActivity(i);
-    }
-
     public void toDataDebiturAktif(View view) {
         Intent i = new Intent(DashboardKabag.this,DataCalonDebitur.class);
         i.putExtra("flag","debiturAktif");

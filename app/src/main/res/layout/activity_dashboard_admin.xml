@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:maxEms="5"
-            android:text="Data Calon Debitur"
+            android:text="Data Pengajuan"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textStyle="bold" />

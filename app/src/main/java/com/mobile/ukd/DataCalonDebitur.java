@@ -3,7 +3,6 @@ package com.mobile.ukd;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -25,8 +24,6 @@ import com.mobile.ukd.admin.InsertPembayaran;
 import com.mobile.ukd.api.ApiClient;
 import com.mobile.ukd.api.ApiInterface;
 import com.mobile.ukd.kabag.DashboardKabag;
-import com.mobile.ukd.kabag.DetailCalonDebiturKabag;
-import com.mobile.ukd.kabag.DetailDebiturAktif;
 import com.mobile.ukd.model.Debitur;
 
 import java.util.ArrayList;
@@ -77,13 +74,13 @@ public class DataCalonDebitur extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(flag.equals("admin")){
-                    export_calon_debitur(url_export_calon_debitur, "calon_debitur_admin.pdf");
+                    export_calon_debitur(url_export_calon_debitur, "Data Debitur.pdf");
                 }else if(flag.equals("kabag")){
-                    export_calon_debitur(url_export_calon_debitur_kabag, "calon_debitur_kabag.pdf");
+                    export_calon_debitur(url_export_calon_debitur_kabag, "Data Debitur.pdf");
                 }else if(flag.equals("debiturAktif")){
-                    export_calon_debitur(url_debitur_aktif, "debitur_aktif.pdf");
+                    export_calon_debitur(url_debitur_aktif, "Data Debitur Layak.pdf");
                 }else if(flag.equals("debiturDitolak")){
-                    export_calon_debitur(url_debitur_ditolak, "debitur_ditolak.pdf");
+                    export_calon_debitur(url_debitur_ditolak, "Data Debitur Tidak Layak.pdf");
                 }
 
             }
@@ -98,21 +95,16 @@ public class DataCalonDebitur extends AppCompatActivity {
                 intent.putExtra(DetailCalonDebitur.DETAIL_DEBITUR,debiturList .get(position-1));
                 startActivity(intent);
                 }
-                if(flag.equals("kabag")){
-                    Intent intent = new Intent(DataCalonDebitur.this, DetailCalonDebiturKabag.class);
-                intent.putExtra(DetailCalonDebiturKabag.DETAIL_DEBITUR_KABAG,debiturList .get(position-1));
-                startActivity(intent);
-              }
-                if(flag.equals("debiturAktif")){
-                    Intent intent = new Intent(DataCalonDebitur.this, DetailDebiturAktif.class);
-                intent.putExtra(DetailDebiturAktif.DETAIL_DEBITUR_AKITF,debiturList .get(position-1));
-                intent.putExtra("flag","aktif");
-                startActivity(intent);
+                if(flag.equals("debiturAktif")) {
+                    Intent intent = new Intent(DataCalonDebitur.this, DetailCalonDebitur.class);
+                    intent.putExtra(DetailCalonDebitur.DETAIL_DEBITUR, debiturList.get(position - 1));
+                    intent.putExtra("flag", "layak");
+                    startActivity(intent);
                 }
-                if(flag.equals("debiturDitolak")){
-                    Intent intent = new Intent(DataCalonDebitur.this, DetailDebiturAktif.class);
-                intent.putExtra(DetailDebiturAktif.DETAIL_DEBITUR_DITOLAK,debiturList .get(position-1));
-                intent.putExtra("flag","ditolak");
+                if(flag.equals("debiturDitolak")) {
+                    Intent intent = new Intent(DataCalonDebitur.this, DetailCalonDebitur.class);
+                    intent.putExtra(DetailCalonDebitur.DETAIL_DEBITUR, debiturList.get(position - 1));
+                    intent.putExtra("flag", "tidak_layak");
                     startActivity(intent);
                 }
                 if(flag.equals("inputPembayaran")){
@@ -134,54 +126,26 @@ public class DataCalonDebitur extends AppCompatActivity {
     }
 
     private void getFlag(){
-        if(flag.equals("admin")){
-            title.setText("Data Calon Debitur");
+        if (flag.equals("admin")) {
+            title.setText("Data Pengajuan");
             getCalonDebiturAdmin();
             subTitle.setText(R.string.datacalondebiturclick);
-        } else if(flag.equals("kabag")) {
-            title.setText("Data Calon Debitur");
-            getCalonDebiturKabag();
-            subTitle.setText("Klik pada nama untuk melihat detail calon debitur");
-        } else if(flag.equals("debiturAktif")) {
-            title.setText("Data Debitur Aktif");
+        } else if (flag.equals("debiturAktif")) {
+            title.setText("Data Debitur Layak");
             getCalonDebiturAktif();
-            subTitle.setText("Klik pada nama untuk melihat detail debitur aktif data disusun berdasarkan tanggal pengajuan terbaru");
-        } else if(flag.equals("debiturDitolak")){
-            title.setText("Data Debitur Ditolak");
+            subTitle.setText("Klik pada nama untuk melihat detail debitur layak data disusun berdasarkan tanggal pengajuan terbaru");
+        } else if (flag.equals("debiturDitolak")) {
+            title.setText("Data Debitur Tidak Layak");
             getCalonDebiturDitolak();
-            subTitle.setText("Klik pada nama untuk melihat detail debitur ditolak data disusun berdasarkan tanggal pengajuan terbaru");
-        } else if(flag.equals("inputPembayaran")){
+            subTitle.setText("Klik pada nama untuk melihat detail debitur tidak layak data disusun berdasarkan tanggal pengajuan terbaru");
+        } else if (flag.equals("inputPembayaran")) {
             title.setText("Input Pembayaran Debitur");
             getCalonDebiturAktif();
             subTitle.setText("Klik pada nama untuk memasukan data pembayaran");
         }
     }
 
-    public void getCalonDebiturKabag(){
-        Call<List<Debitur>> callCalonKabag = apiInterface.getCalonDeiturKabag();
-        callCalonKabag.enqueue(new Callback<List<Debitur>>() {
-            @Override
-            public void onResponse(Call<List<Debitur>> call, Response<List<Debitur>> response) {
-                Log.e("api",response.toString());
-                debiturList = response.body();
-                if(debiturList.isEmpty()){
-                    Toast.makeText(DataCalonDebitur.this, "Data tidak ada", Toast.LENGTH_SHORT).show();
-                }
-                Log.i(DataCalonDebitur.class.getSimpleName(), response.body().toString());
-            adapter = new TableAdapterCalonDebitur(debiturList,getApplicationContext(),listener);
-                adapter.notifyDataSetChanged();
-                rvCalonDebitur.setAdapter(adapter);
 
-
-            }
-
-            @Override
-            public void onFailure(Call<List<Debitur>> call, Throwable t) {
-                Toast.makeText(DataCalonDebitur.this, "Terjadi kesalahan saat memuat data, Coba periksa Koneksi Internet Anda",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
     public void getCalonDebiturAdmin(){
         Call<List<Debitur>> callCalonAdmin = apiInterface.getCalonDeiturAdmin();
