@@ -48,8 +48,8 @@ public class AjukanPeminjamanActivity extends AppCompatActivity implements View.
 
     ProgressDialog progressDialog;
 
-    String a, b, c, d, e, status_layak;
-    int i1, i2, i3, i4, i5;
+    String a, b, c, d, e, f, status_layak;
+    int i1, i2, i3, i4, i5, i6;
 
     private String url = "http://kristoforus.my.id/api_android/daftar_pengajuan.php";
 
@@ -162,8 +162,9 @@ public class AjukanPeminjamanActivity extends AppCompatActivity implements View.
                 s_pendapatan_bersih_hari = "" + pendapatan_bersih_hari.getCleanIntValue();
                 s_pendapatan_bersih_bulan = "" + pendapatan_bersih_bulan.getCleanIntValue();
                 s_hari_kerja = hari_kerja.getText().toString();
+                i6 = i5 / Integer.parseInt(s_tanggungan);
 
-                if (i5 < 800000) {
+                if (i6 < 800000) {
                     status_layak = "0";
                 } else {
                     status_layak = "1";
